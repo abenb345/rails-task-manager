@@ -1,3 +1,10 @@
 <h1>Task detail</h1>
 <% t = Task.find(params[:id]) %>
 <%= t.details  %>
+<%= link_to "Edit task", edit_task_path %>
+
+
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
